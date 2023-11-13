@@ -3,9 +3,7 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { opacity, slideUp } from "./anim"
-import Image from "next/image"
-
-const word = ["Welcome", "To", "Startup Nation", "Cambodia"]
+import Second from "./secondTitle"
 
 const Prelanding = () => {
 
@@ -15,14 +13,6 @@ const Prelanding = () => {
     useEffect(()=>{
         setDimentio({width: window.innerWidth, height: window.innerHeight})
     },[])
-
-    // set time to prelanding
-    useEffect(()=> {
-        if(index === word.length - 1) return;
-        setTimeout(() => {
-            setIndex(index + 1)
-        }, index===0? 1000: 350)
-    },[index])
 
 
     const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`
@@ -48,17 +38,11 @@ const Prelanding = () => {
     >
         {dimension.width > 0 && 
             <div>
-                <motion.div>
-                    <Image src="/rocket.svg" alt="Rocket" width={50} height={50}/>
-                </motion.div>
-                <motion.h2 
-                    variants={opacity} 
-                    initial="initial" 
-                    animate="enter"
+                <h2 
                     className="text-white text-8xl flex justify-center items-center z-10 absolute inset-0"
                 >
-                    {word[index]} 
-                </motion.h2>
+                    <Second/>
+                </h2>
                 <svg className="absolute w-[100%] h-[calc(100%+300px)] left-0 top-0">
                     <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
                 </svg>

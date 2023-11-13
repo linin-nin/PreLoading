@@ -13,11 +13,11 @@ export default function Home() {
   (
     async () => {
       // const locomotiveScroll = new LocomotiveScroll();
-      setTimeout( () => {
-        setLanding(false)
-        document.body.style.cursor = "default"
-        window.scrollTo(0,0)
-      }, 2500)
+      // setTimeout( () => {
+      //   setLanding(false)
+      //   document.body.style.cursor = "default"
+      //   window.scrollTo(0,0)
+      // }, 2500)
     }
   )()
  })
